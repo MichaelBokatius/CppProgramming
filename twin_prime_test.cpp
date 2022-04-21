@@ -14,6 +14,7 @@ int main(void)
     string num;
     std::vector<int> num_pairs;
     
+    printf("*-- Print Twin Prime Pairs --*\n");
     for(int i = start; i < end; i++)
     {
         if(check_prime(i) && check_prime(i + 2))
@@ -24,8 +25,8 @@ int main(void)
             i = i + 1; 
         }                
     }    
-    printf("*-- Finished Counting --* \n\n");
-    
+
+    printf("\n*-- Print Digital Sum --*\n");
     for(int i = 0; i < num_pairs.size() - 1; i += 2)
     {
         printf("%d * %d = ", num_pairs.at(i),num_pairs.at(i + 1));
@@ -34,7 +35,6 @@ int main(void)
         num = to_string(sum); 
         printf(" = %d \n", print_digital_root(num));
     }
-    printf("*-- Finished Digital Sum --* \n\n");
     
     return 0;
 }
