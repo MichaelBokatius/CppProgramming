@@ -1,7 +1,6 @@
 #include<stdio.h> 
 #include<bits/stdc++.h>
 using namespace std;
-
 bool check_prime(int n);
 int print_digital_root(string n);
 
@@ -9,8 +8,8 @@ int print_digital_root(string n);
 int main(void)
 {   
 
-    int start = 2;
-    int end = 100;
+    int start = 5;
+    int end = 200;
     int sum;
     string num;
     std::vector<int> num_pairs;
@@ -27,12 +26,13 @@ int main(void)
     }    
     printf("*-- Finished Counting --* \n\n");
     
-    for(int i = 0; i < num_pairs.size() - 2; i++)
+    for(int i = 0; i < num_pairs.size() - 1; i += 2)
     {
+        printf("%d * %d = ", num_pairs.at(i),num_pairs.at(i + 1));
         sum = num_pairs.at(i) * num_pairs.at(i + 1);
+        printf("%d", sum);
         num = to_string(sum); 
-        cout<< print_digital_root(num) <<endl;
-        
+        printf(" = %d \n", print_digital_root(num));
     }
     printf("*-- Finished Digital Sum --* \n\n");
     
